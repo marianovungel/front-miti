@@ -18,6 +18,7 @@ export default function Login() {
 
   const SetLogin = async(e)=>{
     e.preventDefault()
+    console.log(e)
     try {
       // const user = await axios.get(`http://localhost:3000/user?nome=${username}`)
       const user = await api.get("/user/login", {
