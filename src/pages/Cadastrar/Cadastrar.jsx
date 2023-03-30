@@ -1,4 +1,4 @@
-import axios from 'axios'
+import api from "../../api"
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import './style.css'
@@ -14,21 +14,22 @@ export default function Cadastrar() {
 
   const saveUse = async()=>{
     try {
-      const setNewUse = await axios.post("http://localhost:3000/user", {
-        "nome":username,
-        "senha":password
+      await api.post("/user", {
+        nome:username,
+        senha:password
       })
-      console.log(setNewUse)
     } catch (error) {
-      console.log(error)
+      alert(error)
     }
   }
 
   const SetLogin = async(e)=>{
     e.preventDefault()
     try {
-      const user = await axios.get(`http://localhost:3000/user?nome=${username}`)
-      const useLenght = user.data.length;
+      const user = await api.get("/user/users",{
+        headers:{nome: username}
+      })
+      const useLenght = user.data;
       if(useLenght > 0){
         setShowText(true)
         setText("já Existe Usuário Com Este Nome 😩")
@@ -44,7 +45,7 @@ export default function Cadastrar() {
         }, 1500)
       }
     }catch (error) {
-      console.log(error)
+      alert(error)
     }
   }
   return (
