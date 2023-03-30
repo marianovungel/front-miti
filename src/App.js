@@ -9,6 +9,8 @@ import {useCookies} from 'react-cookie'
 
 function App() {
   const [cookies, setCookie, removeCookie] = useCookies(['user'])
+  setCookie("novojogo", true)
+  removeCookie("novojogo", true)
   const user = cookies.nome;
   return (
     <div className="App">
