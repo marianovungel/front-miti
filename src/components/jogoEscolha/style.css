@@ -1,0 +1,260 @@
+.escoContent{
+    width: 100%;
+    height: 100vh;
+}
+.conteinerEsc{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 60px;
+}
+.perguntacont{
+    width: 98%;
+    height: 80px;
+    border: none;
+    border: 2px solid #999;
+    border-radius: 20px;
+    box-shadow: 1px 1px 1px 1px #999;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+.pergunta{
+    width: 100%;
+    text-align: center;
+}
+.respostaContent{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin-top: 20px;
+}
+.escolha1{
+    width: 40%;
+    height: 40px;
+    border-radius: 20px;
+    padding: 15px;
+    font-size: 1.1rem;
+    color: #000;
+    font-weight: 700;
+    border: 1px solid #999;
+    display: flex;align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px 1px #999;
+}
+.escolha1:hover{
+    background-color: #1C315E;
+    transition: 0.3s;
+    color: #d9d9d9;
+}
+.respostaEscolha{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+.inpTextEscolha{
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    border: none;
+    border: 1px solid #999;
+    box-shadow: 1px 1px 1px 1px #999;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.newNone{
+  display: none;
+}
+#sizeButton{
+  width: 100%;
+    height: 45px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px #999;
+    border: 1px solid #999;
+    background-color: #1C315E;
+    color: #fff;
+    font-size: 1.1rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+    display: flex;align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.answers{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 10px 0px;
+  }
+  .Proximo{
+    width: 100%;
+    height: 45px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px #999;
+    border: 1px solid #999;
+    background-color: #1C315E;
+    color: #fff;
+    font-size: 1.1rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+    display: flex;align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.Proximo:hover, .Proximo.active{
+  background: #1C315E;
+  color: #fff;
+}
+.Proximo.correct{
+  animation: correct 3s ease forwards;
+}
+.Proximo.wrong{
+  animation: wrong 3s ease forwards;
+}
+  .answer{
+    width: 40%;
+    height: 40px;
+    border-radius: 20px;
+    padding: 15px;
+    font-size: 1.1rem;
+    color: #000;
+    font-weight: 700;
+    border: 1px solid #999;
+    display: flex;align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px 1px #999;
+  }
+  .answer:hover, .answer.active{
+    background: #1C315E;
+    color: #fff;
+  }
+  
+  .answer.correct{
+    animation: correct 3s ease forwards;
+  }
+  @keyframes correct{
+    0%,
+    22%,
+    42%{
+      background: #1C315E;
+    }
+    20%,
+    40%,
+    60%{
+      background: linear-gradient(#22074d, #1C315E);
+    }
+    62%,
+    100%{
+      background: green;
+    }
+  }
+  .answer.wrong{
+    animation: wrong 3s ease forwards;
+  }
+  @keyframes wrong{
+    0%,
+    22%,
+    42%{
+      background: #1C315E;
+    }
+    20%,
+    40%,
+    60%{
+      background: linear-gradient(#22074d, #1C315E);
+    }
+    62%,
+    100%{
+      background: crimson;
+    }
+  }
+
+  .verificar{
+    border: none;
+    border: 1px solid red;
+    width: 100%;
+    height: 40px;
+    display: flex;align-items: center;
+    justify-content: center;
+    /* color: red; */
+    color: #fff;
+    box-shadow: 1px 1px 1px 1px rgba(250, 114, 114, 0.559);
+    font-weight: 700;
+    font-size: 1.2rem;
+    background-color: rgba(250, 114, 114, 0.559);
+  }
+  
+  .cardFim{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 30px;
+  }
+  .textFim{
+    width: 100%;
+    height: 70px;
+    border: none;
+    border: 1px solid #999;
+    box-shadow: 1px 1px 1px 1px #999;
+    color: #666;
+    display: flex;align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    margin-top: 30px;
+  
+  }
+  .fontSizeIcom{
+    font-size: 15pt;
+  }
+  .jogarNovament{
+    margin-top: 30px;
+    width: 100%;
+    height: 45px;
+    background: linear-gradient(#22074d, #1C315E);
+    color: #fff;
+    font-weight: 700;
+    font-size: 16pt;
+    border: none;
+    box-shadow: 1px 1px 1px 1px #999;
+    border-radius: 10px;
+    
+  }
+  .colorBorder{
+    color: greenyellow;
+    font-size: 16pt;
+    font-weight: 700;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .colorBorderRed{
+    color: rgb(238, 123, 123);
+    font-size: 16pt;
+    font-weight: 700;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .jogarNovament:hover{
+    background: linear-gradient( #1C315E, #22074d);
+    color: #999;
+    transition: 0.3s;
+    cursor: pointer;
+  }

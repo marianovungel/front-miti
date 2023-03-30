@@ -1,0 +1,102 @@
+.contairerHome{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0px;
+    padding: 0px;
+    /* margin-top: 100px; */
+}
+.header{
+    width: 100%;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: #1C315E;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    border-bottom: 1px solid #1c315eb2;
+    box-shadow: 1px 1px 1px 1px #1c315e56;
+}
+.vazia{
+    flex: 4;
+}
+.menu{
+    flex: 4;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.jogar{
+    list-style: none;
+    color: #fff;
+    cursor: pointer;font-weight: 600;
+    font-size: 1.1rem;
+}
+.jogar:hover{
+    color: #999;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.section{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.heroImg{
+    flex: 6;
+    display: flex;
+    justify-content: center;
+}
+.hero{
+    width: 80%;
+    margin-top: 10px;
+}
+.textHome{
+    flex: 6;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.textMain{
+    font-weight: 700;
+    font-size: 3rem;
+    margin-bottom: 30px;
+    font-family: sans-serif;
+}
+.textFiirst{
+    width: 70%;
+    font-family: sans-serif;
+    text-align: justify;
+    line-height: 35px;
+}
+.jogarNovamente{
+    width: 70%;height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.2rem;
+    background-color: #1C315E;
+    border: none;
+    border: 1px solid #999;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px #D9D9D9;
+}
+.jogarNovamente:hover{
+    color: #666;
+    transition: 0.3s;
+}
+.colorButt{
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+}

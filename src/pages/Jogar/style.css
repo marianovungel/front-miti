@@ -1,0 +1,217 @@
+.JogarConteiner{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0px;
+    padding: 0px;
+    /* margin-top: 100px; */
+}
+.header{
+    width: 100%;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: #1C315E;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    border-bottom: 1px solid #1c315eb2;
+    box-shadow: 1px 1px 1px 1px #1c315e56;
+}
+.vazia{
+    flex: 4;
+}
+.menu{
+    flex: 4;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.jogar{
+    list-style: none;
+    color: #fff;
+    cursor: pointer;font-weight: 600;
+    font-size: 1.1rem;
+}
+.jogar:hover{
+    color: #999;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.section{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.heroImg{
+    flex: 6;
+    display: flex;
+    justify-content: center;
+}
+.hero{
+    width: 80%;
+    margin-top: 10px;
+}
+.textHome{
+    flex: 6;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.textMain{
+    font-weight: 700;
+    font-size: 3rem;
+    margin-bottom: 30px;
+    font-family: sans-serif;
+}
+.textFiirst{
+    width: 70%;
+    font-family: sans-serif;
+    text-align: justify;
+    line-height: 35px;
+}
+.jogarNovamente{
+    width: 70%;height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.2rem;
+    background-color: #1C315E;
+    border: none;
+    border: 1px solid #999;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px #D9D9D9;
+}
+.jogarNovamente:hover{
+    color: #666;
+    transition: 0.3s;
+}
+.sectionJogoEndLogo{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0px;
+}
+.logoSec{
+    flex: 2.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 20px;
+    padding-right: 10px;
+    border: none;
+    border-right: 0.5px solid #1c315e56;
+    height: calc(100vh - 0px);
+    box-shadow: 1px 1px 1px 1px #1c315e2f;
+    background-color: #D9D9D9;
+}
+.logoSide{
+    width: 98%;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+.textLofo{
+    width: 98%;
+    font-size: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+
+    /* color: #666; */
+    color: #000;
+    text-align: justify;
+    margin-bottom: 15px;
+    line-height: 30px;
+}
+.seguir{
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #000;
+}
+.colorrr{
+    color: blue;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: #000;
+}
+.valorr{
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    font-family: 'Times New Roman', Times, serif;
+    color: #000;
+}
+.more{
+    margin-left: 20px;
+    color: #000;
+}
+.jogoContent{
+    flex: 9.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+.con{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.contImg{
+    width: 80%;
+    margin-top: 10px;
+}
+.buttonNext{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.btn{
+    width: 100%;
+    display: flex;align-items: center;
+    justify-content: flex-end;
+}
+.next{
+    height: 40px;
+    padding: 10px 15px;
+    background-color: #1C315E;
+    color: #fff;
+    border: none;
+    border: 1px solid #1C315E;
+    box-shadow: 1px 1px 1px 1px #0b1427;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 10px;
+    margin-right: -100px;
+}
+.next:hover{
+    color: #d9d9d9;
+    cursor: pointer;
+    box-shadow: 1px 1px 2px 1px rgba(0,0,0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+.foot{
+    width: 100%;
+    height: 12vh;
+    background-color: #1C315E;
+    margin-bottom: 0px;
+    color: #1C315E;
+}
