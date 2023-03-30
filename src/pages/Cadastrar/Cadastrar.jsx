@@ -1,6 +1,5 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import { useCookies } from 'react-cookie'
 import { Link, useNavigate } from 'react-router-dom'
 import './style.css'
 
