@@ -19,7 +19,7 @@ export default function JogoEscolha({
 
     useEffect(()=>{
         setQuestion(data[questionNumber-1]);
-        if(questionNumber===12){
+        if(questionNumber===18){
             setFim(false)
         }
     }, [data, questionNumber])
