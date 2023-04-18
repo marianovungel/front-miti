@@ -49,7 +49,7 @@ export default function JogoEscolha({
         setClassName("answer active")
         delay(300, ()=> 
             setClassName(a.correct ? "answer correct" : "answer wrong"))
-        delay(1300, ()=> 
+        delay(1200, ()=> 
             {
                 if(a.correct){
                     setVerText("")
@@ -76,7 +76,7 @@ export default function JogoEscolha({
         
         delay(300, ()=> 
             setClassName(valorCheck === question.resposta[0].text ? "Proximo correct" : "Proximo wrong"))
-        delay(1300, ()=> 
+        delay(1200, ()=> 
             {
                 if(valorCheck === question.resposta[0].text){
                     setVerText("")
