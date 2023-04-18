@@ -160,10 +160,10 @@
     42%{
       background: #1C315E;
     }
-    20%,
+    /* 20%,
     60%{
       background: linear-gradient(#22074d, #1C315E);
-    }
+    } */
     62%,
     100%{
       background: green;
@@ -177,10 +177,10 @@
     42%{
       background: #1C315E;
     }
-    20%,
+    /* 20%,
     60%{
       background: linear-gradient(#22074d, #1C315E);
-    }
+    } */
     62%,
     100%{
       background: crimson;

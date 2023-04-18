@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './style.css'
+import api from '../../api'
 
 export default function JogoEscolha({
     data,
@@ -17,9 +18,19 @@ export default function JogoEscolha({
     const [className, setClassName] = useState("answer")
     const [selectedAnswer, setSelectedAnswer] = useState(null)
 
+    const EditUser = async ()=>{
+        try {
+            const resUser = await api.put("/")
+            console.log(resUser)
+        } catch (error) {
+            alert(error)
+        }
+    }
+
     useEffect(()=>{
         setQuestion(data[questionNumber-1]);
         if(questionNumber===27){
+            EditUser()
             setFim(false)
         }
     }, [data, questionNumber])
@@ -53,7 +64,7 @@ export default function JogoEscolha({
             {
                 if(a.correct){
                     setVerText("")
-                    delay(1000, ()=>{
+                    delay(850, ()=>{
                         setQuestionNumber((prev)=> prev + 1)
                         setAcertos((prev)=> prev + 1)
                         
@@ -80,7 +91,7 @@ export default function JogoEscolha({
             {
                 if(valorCheck === question.resposta[0].text){
                     setVerText("")
-                    delay(1000, ()=>{
+                    delay(850, ()=>{
                         setvVlorinp("")
                         setQuestionNumber((prev)=> prev + 1)
                         setAcertos((prev)=> prev + 1)
