@@ -157,12 +157,10 @@
   }
   @keyframes correct{
     0%,
-    22%,
     42%{
       background: #1C315E;
     }
     20%,
-    40%,
     60%{
       background: linear-gradient(#22074d, #1C315E);
     }
@@ -176,12 +174,10 @@
   }
   @keyframes wrong{
     0%,
-    22%,
     42%{
       background: #1C315E;
     }
     20%,
-    40%,
     60%{
       background: linear-gradient(#22074d, #1C315E);
     }
