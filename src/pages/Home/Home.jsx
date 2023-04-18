@@ -1,18 +1,19 @@
 import React from 'react'
-import { useCookies } from 'react-cookie'
 import { Link, useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import './style.css'
+import { useContext } from 'react'
+import { Context } from '../../Context/Context'
 
 export default function Home() {
-    const [cookies, setCookie, removeCookie] = useCookies(['user'])
+
     let navigate = useNavigate()
+    const { dispatch } = useContext(Context)
+
     const Logout = async()=>{
-        await removeCookie('nome', cookies.nome)
-        await removeCookie('senha', cookies.senha)
+        dispatch({type: "LOGOUT"})
         navigate('/')
         window.location.reload()
-        setCookie("novojogo", true)
     }
 
     const jogo = async ()=>{
@@ -24,8 +25,8 @@ export default function Home() {
               'Linguagem': {
                 C: 'C',
                 Java: 'Java',
-                JavaScript: 'JavaScript',
-                Python: 'Python'
+                Python: 'Python',
+                JavaScript: 'JavaScript'
               }
             },
             inputPlaceholder: 'Selecione Linguagem',

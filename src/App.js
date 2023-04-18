@@ -4,14 +4,15 @@ import Home from './pages/Home/Home';
 import Jogar from './pages/Jogar/Jogar';
 import Login from './pages/Login/Login';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import {useCookies} from 'react-cookie'
+import { useContext } from 'react';
+import { Context } from './Context/Context';
+
 
 
 function App() {
-  const [cookies, setCookie, removeCookie] = useCookies(['user'])
-  setCookie("novojogo", true)
-  removeCookie("novojogo", true)
-  const user = cookies.nome;
+  
+  const { user } = useContext(Context)
+  
   return (
     <div className="App">
       <Router>

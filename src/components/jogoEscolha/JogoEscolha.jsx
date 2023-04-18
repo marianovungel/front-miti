@@ -117,7 +117,9 @@ export default function JogoEscolha({
             )}
             {question?.tipo === "input" &&(
                 <div className="respostaEscolha">
-                    <input type="text" onChange={(e)=>setvVlorinp(e.target.value)} className="inpTextEscolha" />
+                    {/* <input type="text" onChange={(e)=>setvVlorinp(e.target.value)} className="inpTextEscolha" /> */}
+                    <textarea className="inpTextEscolha" onChange={(e)=>setvVlorinp(e.target.value)} >
+                    </textarea>
                     <button className={selectedAnswer ? className : "Proximo"} onClick={()=>handleClickInput(valorinp)}>Next</button>
                 </div>
             )}
