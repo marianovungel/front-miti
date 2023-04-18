@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './style.css'
 import api from '../../api'
+import { Context } from '../../Context/Context'
 
 export default function JogoEscolha({
     data,
@@ -18,19 +19,30 @@ export default function JogoEscolha({
     const [className, setClassName] = useState("answer")
     const [selectedAnswer, setSelectedAnswer] = useState(null)
 
-    const EditUser = async ()=>{
-        try {
-            const resUser = await api.put("/")
-            console.log(resUser)
-        } catch (error) {
-            alert(error)
+    const { user, dispatch } = useContext(Context)
+
+    useEffect(()=>{
+        const editUser = async ()=>{
+            dispatch({ type: "UPDATE_START"})
+            try {
+                const newUser = await api.put(`/user/${user._id}`, {
+                    pontoC: acertos - erros,
+                })
+                console.log(newUser.data)
+                await dispatch({ type: "UPDATE_SUCCESS", payload: newUser.data})
+            } catch (error) {
+                alert(error)
+            }
         }
-    }
+        if(fim === false && user.pontoC < acertos-erros){
+            editUser()
+        }
+    }, [fim, user._id, acertos, dispatch, erros, user.pontoC])
 
     useEffect(()=>{
         setQuestion(data[questionNumber-1]);
+    
         if(questionNumber===27){
-            EditUser()
             setFim(false)
         }
     }, [data, questionNumber])
