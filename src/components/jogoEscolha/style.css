@@ -156,15 +156,12 @@
     animation: correct 3s ease forwards;
   }
   @keyframes correct{
-    0%,
     42%{
       background: #1C315E;
     }
-    20%,
     60%{
       background: linear-gradient(#22074d, #1C315E);
     }
-    62%,
     100%{
       background: green;
     }
@@ -173,15 +170,12 @@
     animation: wrong 3s ease forwards;
   }
   @keyframes wrong{
-    0%,
     42%{
       background: #1C315E;
     }
-    20%,
     60%{
       background: linear-gradient(#22074d, #1C315E);
     }
-    62%,
     100%{
       background: crimson;
     }
