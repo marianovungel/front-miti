@@ -20,7 +20,7 @@ export default function FaseJava() {
         setshow(true)
         const getFases = async()=>{
             try {
-                const res = await api.get("/pergunta");
+                const res = await api.get("/pergunta/Java");
                 setQ(res.data)
                 getImg("./fase1.png")
             } catch (error) {

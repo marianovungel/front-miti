@@ -20,7 +20,7 @@ export default function Fase() {
         setshow(true)
         const getFases = async()=>{
             try {
-                const res = await api.get("/pergunta");
+                const res = await api.get("/pergunta/C");
                 setQ(res.data)
                 getImg("./fase1.png")
             } catch (error) {
