@@ -26,7 +26,7 @@ export default function JogoEscolhaJava({
             dispatch({ type: "UPDATE_START"})
             try {
                 const newUser = await api.put(`/user/${user._id}`, {
-                    pontoC: acertos - erros,
+                    pontoJava: acertos - erros,
                 })
                 console.log(newUser.data)
                 await dispatch({ type: "UPDATE_SUCCESS", payload: newUser.data})
@@ -34,10 +34,10 @@ export default function JogoEscolhaJava({
                 alert(error)
             }
         }
-        if(fim === false && user.pontoC < acertos-erros){
+        if(fim === false && user.pontoJava < acertos-erros){
             editUser()
         }
-    }, [fim, user._id, acertos, dispatch, erros, user.pontoC])
+    }, [fim, user._id, acertos, dispatch, erros, user.pontoJava])
 
     useEffect(()=>{
         setQuestion(data[questionNumber-1]);
