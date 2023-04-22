@@ -39,7 +39,7 @@ export default function FaseJava() {
       
         {show ? (
             <>
-            <img src="./fase1.png" alt={img} className="contImg" />
+            <img src="./fasejava1.png" alt={img} className="contImg" />
             <div className="buttonNext">
                 <div className="btn">
                     <button className="next" onClick={goPergunta}>Next</button>
