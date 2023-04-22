@@ -106,6 +106,14 @@
     flex-wrap: wrap;
     margin: 10px 0px;
   }
+  .answersjava{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 20px 0px;
+  }
   .Proximo{
     width: 100%;
     height: 45px;
@@ -127,10 +135,10 @@
   color: #fff;
 }
 .Proximo.correct{
-  animation: correct 3s ease forwards;
+  animation: correct 1s ease forwards;
 }
 .Proximo.wrong{
-  animation: wrong 3s ease forwards;
+  animation: wrong 1s ease forwards;
 }
   .answer{
     width: 40%;
@@ -151,40 +159,66 @@
     background: #1C315E;
     color: #fff;
   }
+  .answerjava:hover, .answerjava.active{
+    background: #1C315E;
+    color: #fff;
+  }
   
   .answer.correct{
-    animation: correct 3s ease forwards;
+    animation: correct 1s ease forwards;
+  }
+  .answerjava.correct{
+    animation: correct 1s ease forwards;
   }
   @keyframes correct{
     0%,
     42%{
       background: #1C315E;
     }
-    /* 20%,
+    20%,
     60%{
       background: linear-gradient(#22074d, #1C315E);
-    } */
+    }
     62%,
     100%{
       background: green;
     }
   }
   .answer.wrong{
-    animation: wrong 3s ease forwards;
+    animation: wrong 1s ease forwards;
+  }
+  .answerjava.wrong{
+    animation: wrong 1s ease forwards;
   }
   @keyframes wrong{
     0%,
     42%{
       background: #1C315E;
     }
-    /* 20%,
+    20%,
     60%{
       background: linear-gradient(#22074d, #1C315E);
-    } */
+    }
     62%,
     100%{
       background: crimson;
     }
+  }
+
+  .answerjava{
+    width: 98%;
+    height: 40px;
+    border-radius: 20px;
+    padding: 15px;
+    font-size: 1.1rem;
+    color: #000;
+    font-weight: 700;
+    border: 1px solid #999;
+    display: flex;align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px 1px #999;
   }
 
   .verificar{

@@ -36,7 +36,10 @@ export default function Home() {
                 if (value === 'C') {
                     navigate("/jogar")
                     window.location.replace("/jogar")
-                } else {
+                } else if(value === 'Java'){
+                    navigate("/jogarjava")
+                    window.location.replace("/jogarjava")
+                }else {
                   resolve('O jogo para esta linguagem está em Desenvolvimento :)')
                 }
               })

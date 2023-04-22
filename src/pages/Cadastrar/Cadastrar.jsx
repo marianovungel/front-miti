@@ -29,6 +29,7 @@ export default function Cadastrar() {
       const user = await api.get("/user/users",{
         headers:{nome: username}
       })
+      console.log(user)
       const useLenght = user.data;
       if(useLenght > 0){
         setShowText(true)

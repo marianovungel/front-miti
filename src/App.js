@@ -6,6 +6,7 @@ import Login from './pages/Login/Login';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useContext } from 'react';
 import { Context } from './Context/Context';
+import JogarJava from './pages/JogarJava/JogarJava';
 
 
 
@@ -21,6 +22,7 @@ function App() {
             <Route path="/home" element={user ? <Home /> : <Login />} exact />
             <Route path="/criar" element={user ? <Home /> : <Cadastrar />} exact />
             <Route path="/jogar" element={user ? <Jogar />: <Login />} exact />
+            <Route path="/jogarjava" element={user ? <JogarJava />: <Login />} exact />
           </Routes>
         </Router>
     </div>
