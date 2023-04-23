@@ -8,6 +8,7 @@ import { useContext } from 'react';
 import { Context } from './Context/Context';
 import JogarJava from './pages/JogarJava/JogarJava';
 import JogarPy from './pages/JogarPy/JogarPy';
+import JogarJs from './pages/JogarJs/JogarJs';
 
 
 
@@ -25,6 +26,7 @@ function App() {
             <Route path="/jogar" element={user ? <Jogar />: <Login />} exact />
             <Route path="/jogarjava" element={user ? <JogarJava />: <Login />} exact />
             <Route path="/jogarpy" element={user ? <JogarPy />: <Login />} exact />
+            <Route path="/jogarjs" element={user ? <JogarJs />: <Login />} exact />
           </Routes>
         </Router>
     </div>

@@ -42,6 +42,9 @@ export default function Home() {
                 }else if(value === 'Python'){
                   navigate("/jogarpy")
                   window.location.replace("/jogarpy")
+                }else if(value === 'JavaScript'){
+                  navigate("/jogarjs")
+                  window.location.replace("/jogarjs")
                 }else {
                   resolve('O jogo para esta linguagem está em Desenvolvimento :)')
                 }
