@@ -19,7 +19,7 @@ export default function FasePy() {
             try {
                 const res = await api.get("/pergunta/Py");
                 setQ(res.data)
-                getImg("./fase1.png")
+                getImg("./fasepy1.png")
             } catch (error) {
                 console.log(error)
             }
