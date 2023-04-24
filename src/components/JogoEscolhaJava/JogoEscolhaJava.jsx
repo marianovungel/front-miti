@@ -42,7 +42,7 @@ export default function JogoEscolhaJava({
     useEffect(()=>{
         setQuestion(data[questionNumber-1]);
     
-        if(questionNumber===25){
+        if(questionNumber===16){
             setFim(false)
         }
     }, [data, questionNumber])
