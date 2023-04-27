@@ -18,6 +18,9 @@ export default function JogoEscolha({
     const [verText, setVerText] = useState("")
     const [className, setClassName] = useState("answer")
     const [selectedAnswer, setSelectedAnswer] = useState(null)
+    const [numeroOne, setNumeroOne] = useState(0)
+    const [numerotow, setNumerotow] = useState(0)
+    console.log([numeroOne, numerotow])
 
     const { user, dispatch } = useContext(Context)
 
@@ -42,7 +45,7 @@ export default function JogoEscolha({
     useEffect(()=>{
         setQuestion(data[questionNumber-1]);
     
-        if(questionNumber===16){
+        if(questionNumber===32){
             setFim(false)
         }
     }, [data, questionNumber])
@@ -118,6 +121,53 @@ export default function JogoEscolha({
         )
         
     }
+    const handleClickOp = (a)=>{
+        setSelectedAnswer(a)
+        setVerText("")
+        setClassName("Proximo active")
+        // var valorCheck = a.replace(/ /g, '');
+        // var valorCheck = a.replace(/ /g, '');
+        var valorCheck = 0;
+        
+
+        if(question?.resposta[0].op === "+"){
+            valorCheck = parseInt(numeroOne) + parseInt(numerotow);
+        }
+        if(question?.resposta[0].op === "-"){
+            valorCheck = parseInt(numeroOne) - parseInt(numerotow);
+        }
+        if(question?.resposta[0].op === "*"){
+            valorCheck = parseInt(numeroOne) * parseInt(numerotow);
+        }
+        if(question?.resposta[0].op === "/"){
+            valorCheck = parseInt(numeroOne) / parseInt(numerotow);
+        }
+        if(question?.resposta[0].op === "%"){
+            valorCheck = parseInt(numeroOne) % parseInt(numerotow);
+        }
+
+        console.log(valorCheck === question.resposta[0].text)
+        delay(300, ()=> 
+            setClassName(valorCheck === question.resposta[0].text ? "Proximo correct" : "Proximo wrong"))
+        delay(1200, ()=> 
+            {
+                if(valorCheck === question.resposta[0].text){
+                    setVerText("")
+                    delay(850, ()=>{
+                        setvVlorinp("")
+                        setQuestionNumber((prev)=> prev + 1)
+                        setAcertos((prev)=> prev + 1)
+                        setSelectedAnswer(null)
+                        setVerText("")
+                    })
+                }else{
+                    setVerText("")
+                    seterros((prev)=> prev + 1)
+                }
+            }
+        )
+        
+    }
     const goPergunta = ()=>{
         setvVlorinp("")
         setQuestionNumber((prev)=> prev + 1)
@@ -129,7 +179,7 @@ export default function JogoEscolha({
     <div className='escoContent'>
         {fim ? ( <div className="conteinerEsc">
             <div className={question?.tipo === "img" ? "newNone" : "perguntacont"} >
-                <p className={question?.tipo === "img" ? "newNone" : "pergunta"}>{question?.question  +verText}</p>
+                <p className={question?.tipo === "img" ? "newNone" : "pergunta"}>{question?.question +verText}</p>
             </div>
             {question?.tipo === "button" && (
                 <div className="answers">
@@ -155,6 +205,16 @@ export default function JogoEscolha({
                         </div>
                     </div>
                 </>
+            )}
+            {question?.tipo === "operador" &&(
+                <div className="respostaEscolha organizar">
+                    <div className="inputContext">
+                        <input type='number' placeholder='Nímero' onChange={(e)=>setNumeroOne(e.target.value)} className='inputNumber' required />
+                        <div className='inputNumber newdiv'><span className='spanDivOp'>{question?.resposta[0].op}</span></div>
+                        <input type='number' placeholder='Nímero' onChange={(e)=>setNumerotow(e.target.value)} className='inputNumber' required />
+                    </div>
+                    <button className={selectedAnswer ? className : "Proximo"} onClick={()=>handleClickOp({ative: true})}>Next</button>
+                </div>
             )}
         </div>
         ):(

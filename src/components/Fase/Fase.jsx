@@ -21,7 +21,7 @@ export default function Fase() {
             try {
                 const res = await api.get("/pergunta/newc");
                 setQ(res.data)
-                getImg("./fase1.png")
+                getImg("./c1.png")
             } catch (error) {
                 console.log(error)
             }
@@ -38,7 +38,7 @@ export default function Fase() {
       
         {show ? (
             <>
-            <img src="./fase1.png" alt={img} className="contImg" />
+            <img src="./c1.png" alt={img} className="contImg" />
             <div className="buttonNext">
                 <div className="btn">
                     <button className="next" onClick={goPergunta}>Next</button>
