@@ -9,6 +9,7 @@ import { Context } from './Context/Context';
 import JogarJava from './pages/JogarJava/JogarJava';
 import JogarPy from './pages/JogarPy/JogarPy';
 import JogarJs from './pages/JogarJs/JogarJs';
+import Ratingc from './pages/Rating/Ratingc';
 
 
 
@@ -27,6 +28,7 @@ function App() {
             <Route path="/jogarjava" element={user ? <JogarJava />: <Login />} exact />
             <Route path="/jogarpy" element={user ? <JogarPy />: <Login />} exact />
             <Route path="/jogarjs" element={user ? <JogarJs />: <Login />} exact />
+            <Route path="/rating" element={user ? <Ratingc />: <Login />} exact />
           </Routes>
         </Router>
     </div>

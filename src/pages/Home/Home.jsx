@@ -74,12 +74,16 @@ export default function Home() {
             </div>
             <div className="textHome">
                 <h1 className="textMain">Miti Code</h1>
-                <p className="textFiirst">Lorem ipsum dolor sit
-                 amet consectetur, adipisicing elit. Tempore 
-                 placeat sequi veritatis possimus! Est dolorem 
-                 7distinctio libero, quibusdam nam dignissimos 
-                 voluptatibus iusto atque ab 
-                rem cumque praesentium aspernatur itaque sunt.</p>
+                <p className="textFiirst">A criação de um jogo para o 
+                ensino da programação pode ser uma ótima iniciativa, 
+                pois torna o aprendizado mais divertido e interativo. 
+                É uma forma de engajar os estudantes e tornar o processo 
+                de aprendizagem mais efetivo e eficiente. Além disso, jogos
+                educativos são uma tendência atual na educação, especialmente
+                quando se trata de ensinar habilidades técnicas. Aprender a 
+                programar também pode ajudar a desenvolver habilidades 
+                de resolução de problemas, raciocínio lógico e pensamento cítrico, 
+                que são importantes em diversas áreas de atuação.</p>
                 <button className="jogarNovamente" onClick={jogo}>
                     <p className='colorButt'>
                         jogar
