@@ -328,3 +328,46 @@
     font-size: 1.1rem;
     text-align: center;
   }
+
+  .colorContent{
+    border-radius: 10px;
+    height: 300px;
+  }
+  .ifcontent{
+    background-color: #ddd;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .firdtif{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .iiftext2, .iiftext1{
+    width: 80px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 20px;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+  .pif1, .pif{
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-left: 10px;
+  }
+  .xave1, .listif{
+    font-size: 1.3rem;
+  }
+  .listif{
+    margin-left: 20px;
+  }
+  .secundif{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 85px;
+  }

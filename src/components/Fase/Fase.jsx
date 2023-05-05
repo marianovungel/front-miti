@@ -38,7 +38,7 @@ export default function Fase() {
       
         {show ? (
             <>
-            <img src="./c1.png" alt={img} className="contImg" />
+            <img src="./cc00.png" alt={img} className="contImg" />
             <div className="buttonNext">
                 <div className="btn">
                     <button className="next" onClick={goPergunta}>Next</button>
