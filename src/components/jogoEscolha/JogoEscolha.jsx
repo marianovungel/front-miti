@@ -23,7 +23,6 @@ export default function JogoEscolha({
     const [one, setOne] = useState("")
     const [two, setTwo] = useState("")
     const [tRie, setTRie] = useState("")
-    console.log([numeroOne, numerotow])
 
     const { user, dispatch } = useContext(Context)
 
@@ -222,8 +221,7 @@ export default function JogoEscolha({
                     seterros((prev)=> prev + 1)
                 }
             }
-        )
-        
+        ) 
     }
     const goPergunta = ()=>{
         setvVlorinp("")
@@ -277,9 +275,7 @@ export default function JogoEscolha({
             {question?.tipo === "if" &&(
                 <div className="respostaEscolha organizar colorContent">
                     <div className="inputContext ifcontent">
-                        {/* <input type='number' placeholder='Nímero' onChange={(e)=>setNumeroOne(e.target.value)} className='inputNumber' required />
-                        <div className='inputNumber newdiv'><span className='spanDivOp'>{question?.resposta[0].op}</span></div>
-                        <input type='number' placeholder='Nímero' onChange={(e)=>setNumerotow(e.target.value)} className='inputNumber' required /> */}
+                        
                         <div className="centerifContet">
                             <div className="firdtif">
                                 <input className='iiftext2' type="text" name="" id="" onChange={(e)=>setOne(e.target.value)} />

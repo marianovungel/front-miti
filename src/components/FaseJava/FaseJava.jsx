@@ -22,7 +22,7 @@ export default function FaseJava() {
             try {
                 const res = await api.get("/pergunta/newjava");
                 setQ(res.data)
-                getImg("./fase1.png")
+                getImg("./jv1.png")
             } catch (error) {
                 console.log(error)
             }
@@ -39,7 +39,7 @@ export default function FaseJava() {
       
         {show ? (
             <>
-            <img src="./fasejava1.png" alt={img} className="contImg" />
+            <img src="./jv01.png" alt={img} className="contImg" />
             <div className="buttonNext">
                 <div className="btn">
                     <button className="next" onClick={goPergunta}>Next</button>

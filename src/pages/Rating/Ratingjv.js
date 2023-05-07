@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './style.css'
-import C from '../../components/RatingComp/C'
+import Jv from '../../components/RatingComp/Jv'
 
-export default function Ratingc() {
+export default function Ratingjv() {
   return (
     <div className='JogarConteiner'>
         <div className="header">
@@ -33,7 +33,8 @@ export default function Ratingc() {
             
           </div>
           <div className="jogoContent">
-            <C />
+            {/* <C /> */}
+            <Jv />
           </div>
         </div>
         <footer className='foot'>

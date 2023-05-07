@@ -16,6 +16,46 @@ export default function Home() {
         window.location.reload()
     }
 
+    const Ratings = async ()=>{
+        const { value: fruit } = await Swal.fire({
+            title: 'Seleciona a Linguagem de Programação',
+            input: 'select',
+            inputOptions: {
+              
+              'Linguagem': {
+                C: 'Rating C',
+                Java: 'Rating Java',
+                Python: 'Rating Python',
+                JavaScript: 'Rating JavaScript'
+              }
+            },
+            inputPlaceholder: 'Selecione Linguagem',
+            showCancelButton: true,
+            inputValidator: (value) => {
+              return new Promise((resolve) => {
+                if (value === 'C') {
+                    navigate("/rating-c")
+                    window.location.replace("/rating-c")
+                } else if(value === 'Java'){
+                    navigate("/rating-jv")
+                    window.location.replace("/rating-jv")
+                }else if(value === 'Python'){
+                  navigate("/jogarpy")
+                  window.location.replace("/jogarpy")
+                }else if(value === 'JavaScript'){
+                  navigate("/jogarjs")
+                  window.location.replace("/jogarjs")
+                }else {
+                  resolve('O jogo para esta linguagem está em Desenvolvimento :)')
+                }
+              })
+            }
+          })
+          
+          if (fruit) {
+            Swal.fire(`Você selecionou : ${fruit}`)
+          }
+    }
     const jogo = async ()=>{
         const { value: fruit } = await Swal.fire({
             title: 'Seleciona a Linguagem de Programação',
@@ -64,6 +104,7 @@ export default function Home() {
             <div className="menu">
                 <Link to="/home" className="jogar">Home</Link>
                 <li to="/jogar" className="jogar" onClick={jogo}>Jogar</li>
+                <li className="jogar" onClick={Ratings}>Rating</li>
                 <li className="jogar">Instruções</li>
                 <li className="jogar" onClick={Logout}>Logout</li>
             </div>

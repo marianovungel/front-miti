@@ -1,0 +1,42 @@
+.contentCcomp{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.table{
+    width: 80%;
+    height: 700px;
+    background-color: #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: scroll;
+}
+.headerTable, .bodyTable{
+    width: 100%;
+    height: 45px;
+    border: none;
+    border-bottom: 1px solid #999;
+    box-shadow: 1px 1px 1px #999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.htable, .ptable2{
+    flex: 6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ptable{
+    flex: 6;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.ptableName{
+    margin-left: 20px;
+}
