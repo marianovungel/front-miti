@@ -23,10 +23,10 @@ export default function Home() {
             inputOptions: {
               
               'Linguagem': {
-                C: 'Rating C',
-                Java: 'Rating Java',
-                Python: 'Rating Python',
-                JavaScript: 'Rating JavaScript'
+                C: 'Ranking C',
+                Java: 'Ranking Java',
+                Python: 'Ranking Python',
+                JavaScript: 'Ranking JavaScript'
               }
             },
             inputPlaceholder: 'Selecione Linguagem',
@@ -104,7 +104,7 @@ export default function Home() {
             <div className="menu">
                 <Link to="/home" className="jogar">Home</Link>
                 <li to="/jogar" className="jogar" onClick={jogo}>Jogar</li>
-                <li className="jogar" onClick={Ratings}>Rating</li>
+                <li className="jogar" onClick={Ratings}>Ranking</li>
                 <li className="jogar">Instruções</li>
                 <li className="jogar" onClick={Logout}>Logout</li>
             </div>
