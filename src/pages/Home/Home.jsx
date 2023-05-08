@@ -40,8 +40,8 @@ export default function Home() {
                     navigate("/rating-jv")
                     window.location.replace("/rating-jv")
                 }else if(value === 'Python'){
-                  navigate("/jogarpy")
-                  window.location.replace("/jogarpy")
+                  navigate("/rating-py")
+                  window.location.replace("/rating-py")
                 }else if(value === 'JavaScript'){
                   navigate("/jogarjs")
                   window.location.replace("/jogarjs")

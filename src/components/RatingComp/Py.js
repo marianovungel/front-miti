@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from 'react'
-import './style.css'
-import api from '../../api'
+import React from 'react'
+import { useState } from 'react';
+import { useEffect } from 'react';
+import api from '../../api';
 
-export default function C() {
+export default function Py() {
 
     const [data, setData] = useState([])
 
     const ordena = (response)=>{
         response.sort(function(a, b){
-            if(a.pontoC > b.pontoC){
+            if(a.pontoPY > b.pontoPY){
                 return -1;
             }else{
                 return true;
@@ -29,6 +30,7 @@ export default function C() {
         }
         getRating()
     }, [])
+
   return (
     <div className='contentCcomp'>
       <div className='table'>
@@ -41,7 +43,7 @@ export default function C() {
                     <div className='ptable'>
                         <p className='ptableName'>{db.nome}</p>
                     </div>
-                    <p className='ptable2'>{db.pontoC}</p>
+                    <p className='ptable2'>{db.pontoPY}</p>
                 </div>
             ))}
       </div>

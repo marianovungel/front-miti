@@ -35,7 +35,7 @@ export default function Jv() {
       <div className='table'>
         <div className='headerTable'>
             <h4 className='htable'>Nome do Usuário</h4>
-            <h4 className='htable'>Rating</h4>
+            <h4 className='htable'>Ranking</h4>
         </div>
             {data.map((db)=>(
                 <div className='bodyTable' key={db._id}>

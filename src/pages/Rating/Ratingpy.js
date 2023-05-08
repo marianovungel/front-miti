@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import './style.css'
-import Jv from '../../components/RatingComp/Jv'
+import Py from '../../components/RatingComp/Py'
 import Swal from 'sweetalert2'
 
-export default function Ratingjv() {
 
-  let navigate = useNavigate()
+export default function Ratingpy() {
+    let navigate = useNavigate()
     
     const Ratings = async ()=>{
         const { value: fruit } = await Swal.fire({
@@ -120,8 +120,7 @@ export default function Ratingjv() {
             
           </div>
           <div className="jogoContent">
-            {/* <C /> */}
-            <Jv />
+            <Py />
           </div>
         </div>
         <footer className='foot'>

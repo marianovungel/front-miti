@@ -11,6 +11,7 @@ import JogarPy from './pages/JogarPy/JogarPy';
 import JogarJs from './pages/JogarJs/JogarJs';
 import Ratingc from './pages/Rating/Ratingc';
 import Ratingjv from './pages/Rating/Ratingjv';
+import Ratingpy from './pages/Rating/Ratingpy';
 
 
 
@@ -31,6 +32,7 @@ function App() {
             <Route path="/jogarjs" element={user ? <JogarJs />: <Login />} exact />
             <Route path="/rating-c" element={user ? <Ratingc />: <Login />} exact />
             <Route path="/rating-jv" element={user ? <Ratingjv />: <Login />} exact />
+            <Route path="/rating-py" element={user ? <Ratingpy />: <Login />} exact />
             
           </Routes>
         </Router>

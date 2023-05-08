@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import api from '../../api'
-import JogoEscolha from '../jogoEscolha/JogoEscolha'
 import '../Fase/style.css'
+import JogoEscolhapy from '../JogoEscolhapy/JogoEscolhapy'
 
 export default function FasePy() {
     const [show, setshow] = useState(true)
@@ -17,9 +17,9 @@ export default function FasePy() {
         setshow(true)
         const getFases = async()=>{
             try {
-                const res = await api.get("/pergunta/Py");
+                const res = await api.get("/pergunta/newpy");
                 setQ(res.data)
-                getImg("./fasepy1.png")
+                getImg("./py1.png")
             } catch (error) {
                 console.log(error)
             }
@@ -36,7 +36,7 @@ export default function FasePy() {
       
         {show ? (
             <>
-            <img src="./fasepy1.png" alt={img} className="contImg" />
+            <img src="./py1.png" alt={img} className="contImg" />
             <div className="buttonNext">
                 <div className="btn">
                     <button className="next" onClick={goPergunta}>Next</button>
@@ -46,7 +46,7 @@ export default function FasePy() {
         )
         :(
             // <JogoEscolha nfase={nfase}  />
-            <JogoEscolha 
+            <JogoEscolhapy 
                 data={q} 
                 // setStop={setStop} 
                 questionNumber={questionNumber}
