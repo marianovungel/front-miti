@@ -1,11 +1,9 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import './style.css'
-import Py from '../../components/RatingComp/Py'
 import Swal from 'sweetalert2'
+import Js from '../../components/RatingComp/Js'
 
-
-export default function Ratingpy() {
+export default function Ratingjs() {
     let navigate = useNavigate()
     
     const Ratings = async ()=>{
@@ -89,7 +87,6 @@ export default function Ratingpy() {
             Swal.fire(`Você selecionou : ${fruit}`)
           }
     }
-
   return (
     <div className='JogarConteiner'>
         <div className="header">
@@ -120,7 +117,7 @@ export default function Ratingpy() {
             
           </div>
           <div className="jogoContent">
-            <Py />
+            <Js />
           </div>
         </div>
         <footer className='foot'>

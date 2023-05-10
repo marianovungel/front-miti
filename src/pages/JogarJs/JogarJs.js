@@ -2,8 +2,8 @@ import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 // import FaseJava from '../../components/Fase/FaseJava'
 import '../Jogar/style.css'
-import FaseJava from '../../components/FaseJava/FaseJava'
 import Swal from 'sweetalert2'
+import FaseJs from '../../components/FaseJs/FaseJs'
 
 export default function JogarJs() {
 
@@ -36,8 +36,8 @@ export default function JogarJs() {
                   navigate("/rating-py")
                   window.location.replace("/rating-py")
                 }else if(value === 'JavaScript'){
-                  navigate("/jogarjs")
-                  window.location.replace("/jogarjs")
+                  navigate("/rating-js")
+                  window.location.replace("/rating-js")
                 }else {
                   resolve('O jogo para esta linguagem está em Desenvolvimento :)')
                 }
@@ -120,7 +120,7 @@ export default function JogarJs() {
             
           </div>
           <div className="jogoContent">
-            <FaseJava />
+            <FaseJs />
           </div>
         </div>
         <footer className='foot'>

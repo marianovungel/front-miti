@@ -34,8 +34,8 @@ export default function JogarPy() {
                   navigate("/rating-py")
                   window.location.replace("/rating-py")
                 }else if(value === 'JavaScript'){
-                  navigate("/jogarjs")
-                  window.location.replace("/jogarjs")
+                  navigate("/rating-js")
+                  window.location.replace("/rating-js")
                 }else {
                   resolve('O jogo para esta linguagem está em Desenvolvimento :)')
                 }

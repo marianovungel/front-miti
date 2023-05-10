@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import api from '../../api'
 import '../Fase/style.css'
-import JogoEscolhaJava from '../JogoEscolhaJava/JogoEscolhaJava'
+import JogoEscolhajs from '../JogoEscolhajs/JogoEscolhajs'
 
 export default function FaseJs() {
     const [show, setshow] = useState(true)
@@ -20,9 +20,9 @@ export default function FaseJs() {
         setshow(true)
         const getFases = async()=>{
             try {
-                const res = await api.get("/pergunta/Java");
+                const res = await api.get("/pergunta/newjs");
                 setQ(res.data)
-                getImg("./fase1.png")
+                getImg("./js1.png")
             } catch (error) {
                 console.log(error)
             }
@@ -33,13 +33,16 @@ export default function FaseJs() {
     const goPergunta = ()=>{
         setshow(false)
     }
+    
+    
+   
 
   return (
     <div className="con">
       
         {show ? (
             <>
-            <img src="./fasejava1.png" alt={img} className="contImg" />
+            <img src="./js1.png" alt={img} className="contImg" />
             <div className="buttonNext">
                 <div className="btn">
                     <button className="next" onClick={goPergunta}>Next</button>
@@ -49,12 +52,12 @@ export default function FaseJs() {
         )
         :(
             // <JogoEscolha nfase={nfase}  />
-            <JogoEscolhaJava 
+            <JogoEscolhajs 
                 data={q} 
                 // setStop={setStop} 
                 questionNumber={questionNumber}
                 setQuestionNumber={setQuestionNumber}
-                />
+            />
         )}
     </div>
   )

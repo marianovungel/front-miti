@@ -3,13 +3,11 @@ import '../jogoEscolha/style.css'
 import api from '../../api'
 import { Context } from '../../Context/Context'
 
-export default function JogoEscolhaJava({
+export default function JogoEscolhajs({
     data,
     questionNumber,
     setQuestionNumber,
 }) {
-    
-
     const [question, setQuestion] = useState(null)
     const [valorinp, setvVlorinp] = useState(null)
     const [erros, seterros] = useState(0)
@@ -31,7 +29,7 @@ export default function JogoEscolhaJava({
             dispatch({ type: "UPDATE_START"})
             try {
                 const newUser = await api.put(`/user/${user._id}`, {
-                    pontoJava: acertos - erros,
+                    pontoJS: acertos - erros,
                 })
                 console.log(newUser.data)
                 await dispatch({ type: "UPDATE_SUCCESS", payload: newUser.data})
@@ -39,10 +37,10 @@ export default function JogoEscolhaJava({
                 alert(error)
             }
         }
-        if(fim === false && user.pontoJava < acertos-erros){
+        if(fim === false && user.pontoJS < acertos-erros){
             editUser()
         }
-    }, [fim, user._id, acertos, dispatch, erros, user.pontoJava])
+    }, [fim, user._id, acertos, dispatch, erros, user.pontoJS])
 
     useEffect(()=>{
         setQuestion(data[questionNumber-1]);
@@ -148,7 +146,6 @@ export default function JogoEscolhaJava({
             valorCheck = parseInt(numeroOne) % parseInt(numerotow);
         }
 
-        console.log(valorCheck === question.resposta[0].text)
         delay(300, ()=> 
             setClassName(valorCheck === question.resposta[0].text ? "Proximo correct" : "Proximo wrong"))
         delay(1200, ()=> 
@@ -229,7 +226,6 @@ export default function JogoEscolhaJava({
         setSelectedAnswer(null)
         setVerText("")
     }
-    
   return (
     <div className='escoContent'>
         {fim ? ( <div className="conteinerEsc">
@@ -245,9 +241,6 @@ export default function JogoEscolhaJava({
             )}
             {question?.tipo === "input" &&(
                 <div className="respostaEscolha">
-                    {/* <input type="text" onChange={(e)=>setvVlorinp(e.target.value)} className="inpTextEscolha" /> */}
-                    {/* <textarea className="inpTextEscolha" onChange={(e)=>setvVlorinp(e.target.value)} >
-                    </textarea> */}
                     <input type="text" onChange={(e)=>setvVlorinp(e.target.value)} className="inpTextEscolha" />
                     <button className={selectedAnswer ? className : "Proximo"} onClick={()=>handleClickInput(valorinp)}>Next</button>
                 </div>
