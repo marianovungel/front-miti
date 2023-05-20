@@ -22,10 +22,10 @@
     box-shadow: 1px 1px 1px 1px #1c315e56;
 }
 .vazia{
-    flex: 4;
+    flex: 3;
 }
 .menu{
-    flex: 4;
+    flex: 6;
     display: flex;
     align-items: center;
     justify-content: space-evenly;

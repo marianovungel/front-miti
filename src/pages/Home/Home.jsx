@@ -1,14 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import './style.css'
 import { useContext } from 'react'
 import { Context } from '../../Context/Context'
+import api from '../../api'
 
 export default function Home() {
 
+  const [adm, setAdm] = useState(false)
+
     let navigate = useNavigate()
-    const { dispatch } = useContext(Context)
+    const { user, dispatch } = useContext(Context)
+
+    useEffect(()=>{
+      const getAdm = async ()=>{
+        try {
+          const getUse = await api.get(`/user/adm/${user._id}`)
+          getUse.data.adm ? setAdm(true) : setAdm(false)
+        } catch (error) {
+          alert(error)
+        }
+      }
+      getAdm()
+    }, [user._id])
 
     const Logout = async()=>{
         dispatch({type: "LOGOUT"})
@@ -106,6 +121,7 @@ export default function Home() {
                 <li to="/jogar" className="jogar" onClick={jogo}>Jogar</li>
                 <li className="jogar" onClick={Ratings}>Ranking</li>
                 <li className="jogar">Instruções</li>
+                {adm && (<Link to='/painel' className="jogar">Painel</Link>)}
                 <li className="jogar" onClick={Logout}>Logout</li>
             </div>
         </div>

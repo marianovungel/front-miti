@@ -129,6 +129,12 @@
     align-items: center;
     color: #050625;
 }
+.menuItenLeft:hover{
+    background-color: #fff;
+    color: #000;
+    transition: 0.3s;
+    cursor: pointer;
+}
 .colorLeft{
     background-color: #fff;
     color: #000;
@@ -138,12 +144,80 @@
 }
 .graficos{
     width: 90%;
-    height: 400px;
+    height: 270px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    margin-top: 30px;
 }
 .grafC{
     width: 40%;
+    height: 270px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.instrucoes{
+    width: 80%;
+    padding: 40px;
+    border: 1.5px solid #ddd;
+    box-shadow: 1px 1px 2px 1px #ddd;
+    border-radius: 20px;
+    margin-top: 30px;
+}
+.hinstrutions{
+    text-align: center;
+}
+.pInstrutions{
+    width: 100%;
+    text-align: justify;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.sidebarAdmCad{
+    width: 90%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+.formAdm{
+    width: 60%;
+    padding: 25px 20px 30px 20px;
+    border: 1px solid #ddd;
+    box-shadow: 1px 2px 1px 1px #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+}
+.hformAdm{
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+.inputAdmName{
+    width: 90%;
+    height: 30px;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 25px;
+    border: 1px solid #ddd;
+}
+.cadAdm{
+    width: 95%;
+    height: 50px;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.3rem;
+    background-color: #1b3a7d;
+    cursor: pointer;
+    margin-bottom: 60px;
 }
