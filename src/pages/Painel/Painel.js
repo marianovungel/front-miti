@@ -7,6 +7,7 @@ import { Context } from '../../Context/Context'
 import api from '../../api'
 import { useState } from 'react';
 import Swal from 'sweetalert2';
+import _ from 'underscore'
 
 export const options = {
   title: "LINGUAGEM C",
@@ -14,48 +15,59 @@ export const options = {
   vAxis: { minValue: 0 },
   chartArea: { width: "80%", height: "70%" },
 };
-export const optionsjv = {
-  title: "LINGUAGEM JAVA",
-};
-
-export const datajs = [
-  ["Year", "Sales", "Expenses", "Profit"],
-  ["2014", 1000, 400, 200],
-  ["2015", 1170, 460, 250],
-  ["2016", 660, 1120, 300],
-  ["2017", 1030, 540, 350],
-];
-
-export const optionsjs = {
-  chart: {
-    title: "Company Performance",
-    subtitle: "Sales, Expenses, and Profit: 2014-2017",
-  },
-};
-export const datapy = [
-  ["Element", "Density", { role: "style" }],
-  ["Copper", 8.94, "#b87333"], // RGB value
-  ["Silver", 10.49, "silver"], // English color name
-  ["Gold", 19.3, "gold"],
-  ["Platinum", 21.45, "color: #e5e4e2"], // CSS-style declaration
-];
 
 export const data = [
   ["Tipos", "Sequencia", "Valor"],
   ["Input", 5, 6],
   ["Mult-Escolha", 4, 12],
-  ["Mult-Input", 3, 4],
-  ["Mult-Escolha", 2, 7],
+  ["Duplo-Input", 3, 4],
+  ["Triplo-Input", 2, 7],
   ["Perguntas", 1, 26],
 ];
+export const optionsjv = {
+  title: "LINGUAGEM JAVA",
+  hAxis: { title: "Tipos", titleTextStyle: { color: "#333" } },
+  vAxis: { minValue: 0 },
+  chartArea: { width: "80%", height: "70%" },
+};
 
 export const datajv = [
-  ["Task", "Hours per Day"],
-  ["Work", 11],
-  ["Eat", 2],
-  ["Commute", 2],
-  ["Watch TV", 2],
-  ["Sleep", 7],
+  ["Tipos", "Sequencia", "Valor"],
+  ["Input", 5, 5],
+  ["Mult-Escolha", 4, 10],
+  ["Duplo-Input", 3, 4],
+  ["Triplo-Input", 2, 7],
+  ["Perguntas", 1, 23],
+];
+export const optionspy = {
+  title: "LINGUAGEM PYTHON",
+  hAxis: { title: "Tipos", titleTextStyle: { color: "#333" } },
+  vAxis: { minValue: 0 },
+  chartArea: { width: "80%", height: "70%" },
+};
+
+export const datapy = [
+  ["Tipos", "Sequencia", "Valor"],
+  ["Input", 5, 5],
+  ["Mult-Escolha", 4, 10],
+  ["Duplo-Input", 3, 2],
+  ["Triplo-Input", 2, 3],
+  ["Perguntas", 1, 20],
+];
+export const optionsjs = {
+  title: "LINGUAGEM JAVASCRIPT",
+  hAxis: { title: "Tipos", titleTextStyle: { color: "#333" } },
+  vAxis: { minValue: 0 },
+  chartArea: { width: "80%", height: "70%" },
+};
+
+export const datajs = [
+  ["Tipos", "Sequencia", "Valor"],
+  ["Input", 5, 8],
+  ["Mult-Escolha", 4, 11],
+  ["Duplo-Input", 3, 3],
+  ["Triplo-Input", 2, 3],
+  ["Perguntas", 1, 24],
 ];
 
 export default function Painel() {
@@ -68,7 +80,176 @@ export default function Painel() {
   const [CadAdm, setCadAdm] = useState("menuItenLeft")
   const [Nome, setNome] = useState("")
   const [Senha, setSenha] = useState("")
-  console.log([Nome, Senha])
+  const [question, setQuestion] = useState("")
+  const [resTue, setResTue] = useState("")
+  const [Resone, setResone] = useState("")
+  const [ResTow, setResTow] = useState("")
+  const [resTre, setresTre] = useState("")
+
+  const MultQ = async (e)=>{
+    e.preventDefault()
+    const newRes = [
+      {
+        text: resTue,
+        correct: true,
+      },
+      {
+        text: Resone,
+        correct: false,
+      },
+      {
+        text: ResTow,
+        correct: false,
+      },
+      {
+        text: resTre,
+        correct: false,
+      }
+    ]
+    try {
+      var resposta = _.shuffle(newRes);
+      const tt = await api.post("/pergunta/cmult", {
+        question: question,
+        tipo: "button",
+        resposta: resposta
+      })
+      if(tt){
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Your work has been saved',
+          showConfirmButton: false,
+          timer: 1500
+        })
+        setShow("grafico")
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  const MultQJv = async (e)=>{
+    e.preventDefault()
+    const newRes = [
+      {
+        text: resTue,
+        correct: true,
+      },
+      {
+        text: Resone,
+        correct: false,
+      },
+      {
+        text: ResTow,
+        correct: false,
+      },
+      {
+        text: resTre,
+        correct: false,
+      }
+    ]
+    try {
+      var resposta = _.shuffle(newRes);
+      const tt = await api.post("/pergunta/jvmult", {
+        question: question,
+        tipo: "button",
+        resposta: resposta
+      })
+      if(tt){
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Your work has been saved',
+          showConfirmButton: false,
+          timer: 1500
+        })
+        setShow("grafico")
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  const MultQpy = async (e)=>{
+    e.preventDefault()
+    const newRes = [
+      {
+        text: resTue,
+        correct: true,
+      },
+      {
+        text: Resone,
+        correct: false,
+      },
+      {
+        text: ResTow,
+        correct: false,
+      },
+      {
+        text: resTre,
+        correct: false,
+      }
+    ]
+    try {
+      var resposta = _.shuffle(newRes);
+      const tt = await api.post("/pergunta/pymult", {
+        question: question,
+        tipo: "button",
+        resposta: resposta
+      })
+      if(tt){
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Your work has been saved',
+          showConfirmButton: false,
+          timer: 1500
+        })
+        setShow("grafico")
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  const MultQjs = async (e)=>{
+    e.preventDefault()
+    const newRes = [
+      {
+        text: resTue,
+        correct: true,
+      },
+      {
+        text: Resone,
+        correct: false,
+      },
+      {
+        text: ResTow,
+        correct: false,
+      },
+      {
+        text: resTre,
+        correct: false,
+      }
+    ]
+    try {
+      var resposta = _.shuffle(newRes);
+      const tt = await api.post("/pergunta/jsmult", {
+        question: question,
+        tipo: "button",
+        resposta: resposta
+      })
+      if(tt){
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Your work has been saved',
+          showConfirmButton: false,
+          timer: 1500
+        })
+        setShow("grafico")
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   const { dispatch } = useContext(Context)
   let navigate = useNavigate()
@@ -174,6 +355,42 @@ export default function Painel() {
         Swal.fire(`Você selecionou : ${fruit}`)
       }
 }
+  const cadastrarQ = async ()=>{
+    const { value: fruit } = await Swal.fire({
+        title: 'Seleciona a Linguagem de Programação',
+        input: 'select',
+        inputOptions: {
+          
+          'Linguagem': {
+            C: 'Cadastrar C',
+            Java: 'Cadastrar Java',
+            Python: 'Cadastrar Python',
+            JavaScript: 'Cadastrar JavaScript'
+          }
+        },
+        inputPlaceholder: 'Selecione Linguagem',
+        showCancelButton: true,
+        inputValidator: (value) => {
+          return new Promise((resolve) => {
+            if (value === 'C') {
+                setShow("C")
+            } else if(value === 'Java'){
+              setShow("Java")
+            }else if(value === 'Python'){
+              setShow("Python")
+            }else if(value === 'JavaScript'){
+              setShow("JavaScript")
+            }else {
+              resolve('O jogo para esta linguagem está em Desenvolvimento :)')
+            }
+          })
+        }
+      })
+      
+      if (fruit) {
+        Swal.fire(`Você selecionou : ${fruit}`)
+      }
+}
 
   return (
     <div className='fullPainel'>
@@ -188,10 +405,10 @@ export default function Painel() {
             <i className="fa-solid fa-chart-line marginIconManuLeft"></i>
             <h3 className='marginIconManuLeft'>Painel</h3>
           </div>
-          <Link to='/home' className='menuItenLeft'>
+          <div onClick={cadastrarQ} className='menuItenLeft'>
             <i className="fa-solid fa-pen-to-square marginIconManuLeft"></i>
             <h3 className='marginIconManuLeft'>Cadastrar Pergunta</h3>
-          </Link>
+          </div>
           <div className={CadAdm}>
             <i className="fa-solid fa-user-plus marginIconManuLeft"></i>
             <h3 className='marginIconManuLeft' onClick={setShowCadAdm}>Cadastrar Administrador</h3>
@@ -263,7 +480,7 @@ export default function Painel() {
         </div>
         )}
         {show === "grafico" && (<div className='graficos'>
-          <div className='grafC'>
+        <div className='grafC'>
           <Chart
             chartType="AreaChart"
             width="100%"
@@ -274,26 +491,28 @@ export default function Painel() {
           </div>
           <div className='grafC'>
           <Chart
-            chartType="PieChart"
+            chartType="AreaChart"
+            width="100%"
+            height="250px"
             data={datajv}
             options={optionsjv}
-            width={"70%"}
-            height={"250px"}
           />
           </div>
         </div>
         )}
         {show === "grafico" && (<div className='graficos'>
-          <div className='grafC'>
-          <Chart 
-            chartType="ColumnChart" 
-            width="100%" 
-            height="250px" 
-            data={datapy} />
+        <div className='grafC'>
+          <Chart
+            chartType="AreaChart"
+            width="100%"
+            height="250px"
+            data={datapy}
+            options={optionspy}
+          />
           </div>
           <div className='grafC'>
           <Chart
-            chartType="Bar"
+            chartType="AreaChart"
             width="100%"
             height="250px"
             data={datajs}
@@ -310,6 +529,91 @@ export default function Painel() {
             <input type='password' onChange={(e)=>setSenha(e.target.value)} className='inputAdmName' required placeholder='senha' />
             <button type="submit" className='cadAdm'>Cadastrar</button>
           </form>
+        </div>
+        )}
+
+        { show === "C" && (<div className='fullAdmCadPergunta'>
+          <div className='menuCadPergunta'>
+            <div className='ItemMenuPergunta seletBackgrond'>Linguagem C</div>
+            <div className='ItemMenuPergunta'>Linguagem Java</div>
+            <div className='ItemMenuPergunta'>Linguagem Python</div>
+            <div className='ItemMenuPergunta'>Linguagem JavaScript</div>
+          </div>
+          <div className='centerFormPR'>
+            <form className='formPerRes' onSubmit={MultQ}>
+              <input type='text' className='wPer' onChange={e=>setQuestion(e.target.value)} required placeholder='Pergunta' />
+              <div className='respost'>
+                <input className='inpRes' type='text' onChange={e=>setResTue(e.target.value)} placeholder='Resposta Certa' required />
+                <input className='inpRes' type='text' onChange={e=>setResone(e.target.value)} placeholder='Resposta Falsa' required />
+                <input className='inpRes' type='text' onChange={e=>setResTow(e.target.value)} placeholder='Resposta Falsa' required />
+                <input className='inpRes' type='text' onChange={e=>setresTre(e.target.value)} placeholder='Resposta Falsa' required />
+              </div>
+              <button className='cadastrarButtonRes' type="submit">Cadastrar</button>
+            </form>
+          </div>
+        </div>
+        )}
+        { show === "Java" && (<div className='fullAdmCadPergunta'>
+          <div className='menuCadPergunta'>
+            <div className='ItemMenuPergunta'>Linguagem C</div>
+            <div className='ItemMenuPergunta seletBackgrond'>Linguagem Java</div>
+            <div className='ItemMenuPergunta'>Linguagem Python</div>
+            <div className='ItemMenuPergunta'>Linguagem JavaScript</div>
+          </div>
+          <div className='centerFormPR'>
+            <form className='formPerRes' onSubmit={MultQJv}>
+              <input type='text' className='wPer' onChange={e=>setQuestion(e.target.value)} required placeholder='Pergunta' />
+              <div className='respost'>
+                <input className='inpRes' type='text' onChange={e=>setResTue(e.target.value)} placeholder='Resposta Certa' required />
+                <input className='inpRes' type='text' onChange={e=>setResone(e.target.value)} placeholder='Resposta Falsa' required />
+                <input className='inpRes' type='text' onChange={e=>setResTow(e.target.value)} placeholder='Resposta Falsa' required />
+                <input className='inpRes' type='text' onChange={e=>setresTre(e.target.value)} placeholder='Resposta Falsa' required />
+              </div>
+              <button className='cadastrarButtonRes' type="submit">Cadastrar</button>
+            </form>
+          </div>
+        </div>
+        )}
+        { show === "Python" && (<div className='fullAdmCadPergunta'>
+          <div className='menuCadPergunta'>
+            <div className='ItemMenuPergunta'>Linguagem C</div>
+            <div className='ItemMenuPergunta'>Linguagem Java</div>
+            <div className='ItemMenuPergunta seletBackgrond'>Linguagem Python</div>
+            <div className='ItemMenuPergunta'>Linguagem JavaScript</div>
+          </div>
+          <div className='centerFormPR'>
+            <form className='formPerRes' onSubmit={MultQpy}>
+              <input type='text' className='wPer' onChange={e=>setQuestion(e.target.value)} required placeholder='Pergunta' />
+              <div className='respost'>
+                <input className='inpRes' type='text' onChange={e=>setResTue(e.target.value)} placeholder='Resposta Certa' required />
+                <input className='inpRes' type='text' onChange={e=>setResone(e.target.value)} placeholder='Resposta Falsa' required />
+                <input className='inpRes' type='text' onChange={e=>setResTow(e.target.value)} placeholder='Resposta Falsa' required />
+                <input className='inpRes' type='text' onChange={e=>setresTre(e.target.value)} placeholder='Resposta Falsa' required />
+              </div>
+              <button className='cadastrarButtonRes' type="submit">Cadastrar</button>
+            </form>
+          </div>
+        </div>
+        )}
+        { show === "JavaScript" && (<div className='fullAdmCadPergunta'>
+          <div className='menuCadPergunta'>
+            <div className='ItemMenuPergunta'>Linguagem C</div>
+            <div className='ItemMenuPergunta'>Linguagem Java</div>
+            <div className='ItemMenuPergunta'>Linguagem Python</div>
+            <div className='ItemMenuPergunta seletBackgrond'>Linguagem JavaScript</div>
+          </div>
+          <div className='centerFormPR'>
+            <form className='formPerRes' onSubmit={MultQjs}>
+              <input type='text' className='wPer' onChange={e=>setQuestion(e.target.value)} required placeholder='Pergunta' />
+              <div className='respost'>
+                <input className='inpRes' type='text' onChange={e=>setResTue(e.target.value)} placeholder='Resposta Certa' required />
+                <input className='inpRes' type='text' onChange={e=>setResone(e.target.value)} placeholder='Resposta Falsa' required />
+                <input className='inpRes' type='text' onChange={e=>setResTow(e.target.value)} placeholder='Resposta Falsa' required />
+                <input className='inpRes' type='text' onChange={e=>setresTre(e.target.value)} placeholder='Resposta Falsa' required />
+              </div>
+              <button className='cadastrarButtonRes' type="submit">Cadastrar</button>
+            </form>
+          </div>
         </div>
         )}
       </div>
