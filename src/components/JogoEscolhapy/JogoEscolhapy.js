@@ -13,6 +13,7 @@ export default function JogoEscolhapy({
     const [erros, seterros] = useState(0)
     const [fim, setFim] = useState(true)
     const [acertos, setAcertos] = useState(0)
+    const [numPerg, setnumPerg] = useState(1)
     const [verText, setVerText] = useState("")
     const [className, setClassName] = useState("answer")
     const [selectedAnswer, setSelectedAnswer] = useState(null)
@@ -78,6 +79,7 @@ export default function JogoEscolhapy({
         delay(1200, ()=> 
             {
                 if(a.correct){
+                    setnumPerg((prev)=> prev + 1)
                     setVerText("")
                     delay(850, ()=>{
                         setQuestionNumber((prev)=> prev + 1)
@@ -105,6 +107,7 @@ export default function JogoEscolhapy({
         delay(1200, ()=> 
             {
                 if(valorCheck === question.resposta[0].text){
+                    setnumPerg((prev)=> prev + 1)
                     setVerText("")
                     delay(850, ()=>{
                         setvVlorinp("")
@@ -152,6 +155,7 @@ export default function JogoEscolhapy({
         delay(1200, ()=> 
             {
                 if(valorCheck === question.resposta[0].text){
+                    setnumPerg((prev)=> prev + 1)
                     setVerText("")
                     delay(850, ()=>{
                         setvVlorinp("")
@@ -179,6 +183,7 @@ export default function JogoEscolhapy({
         delay(1200, ()=> 
             {
                 if(one === question.resposta[0].text1 && two === question.resposta[0].text2){
+                    setnumPerg((prev)=> prev + 1)
                     setVerText("")
                     delay(850, ()=>{
                         setvVlorinp("")
@@ -206,6 +211,7 @@ export default function JogoEscolhapy({
         delay(1200, ()=> 
             {
                 if(one === question.resposta[0].text1 && two === question.resposta[0].text2 && tRie === question.resposta[0].text3){
+                    setnumPerg((prev)=> prev + 1)
                     setVerText("")
                     delay(850, ()=>{
                         setvVlorinp("")
@@ -230,6 +236,7 @@ export default function JogoEscolhapy({
   return (
     <div className='escoContent'>
         {fim ? ( <div className="conteinerEsc">
+            <div className='numPergDiv'>{numPerg} / 21 </div>
             <div className={question?.tipo === "img" ? "newNone" : "perguntacont"} >
                 <p className={question?.tipo === "img" ? "newNone" : "pergunta"}>{question?.question +verText}</p>
             </div>
@@ -242,9 +249,6 @@ export default function JogoEscolhapy({
             )}
             {question?.tipo === "input" &&(
                 <div className="respostaEscolha">
-                    {/* <input type="text" onChange={(e)=>setvVlorinp(e.target.value)} className="inpTextEscolha" /> */}
-                    {/* <textarea className="inpTextEscolha" onChange={(e)=>setvVlorinp(e.target.value)} >
-                    </textarea> */}
                     <input type="text" onChange={(e)=>setvVlorinp(e.target.value)} className="inpTextEscolha" />
                     <button className={selectedAnswer ? className : "Proximo"} onClick={()=>handleClickInput(valorinp)}>Next</button>
                 </div>
@@ -316,7 +320,7 @@ export default function JogoEscolhapy({
         </div>
         ):(
             <div className="cardFim">
-                <p className="textFim">Você Acertou  <b className='colorBorder'>{acertos}</b> <span className='fontSizeIcom'>👌</span></p>
+                <p className="textFim">Você Acertou  <b className='colorBorder'>{acertos - erros}</b> <span className='fontSizeIcom'>👌</span></p>
                 <p className="textFim">Você Errou  <b className='colorBorderRed'>{erros}</b> <span className='fontSizeIcom'>🤦</span></p>
                 <button className='jogarNovament' onClick={newGame}>Jogar Novamente</button>
             </div>

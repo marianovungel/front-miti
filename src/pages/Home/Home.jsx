@@ -49,16 +49,12 @@ export default function Home() {
             inputValidator: (value) => {
               return new Promise((resolve) => {
                 if (value === 'C') {
-                    navigate("/rating-c")
                     window.location.replace("/rating-c")
                 } else if(value === 'Java'){
-                    navigate("/rating-jv")
                     window.location.replace("/rating-jv")
                 }else if(value === 'Python'){
-                  navigate("/rating-py")
                   window.location.replace("/rating-py")
                 }else if(value === 'JavaScript'){
-                  navigate("/rating-js")
                   window.location.replace("/rating-js")
                 }else {
                   resolve('O jogo para esta linguagem está em Desenvolvimento :)')
@@ -89,16 +85,12 @@ export default function Home() {
             inputValidator: (value) => {
               return new Promise((resolve) => {
                 if (value === 'C') {
-                    navigate("/jogar")
                     window.location.replace("/jogar")
                 } else if(value === 'Java'){
-                    navigate("/jogarjava")
                     window.location.replace("/jogarjava")
                 }else if(value === 'Python'){
-                  navigate("/jogarpy")
                   window.location.replace("/jogarpy")
                 }else if(value === 'JavaScript'){
-                  navigate("/jogarjs")
                   window.location.replace("/jogarjs")
                 }else {
                   resolve('O jogo para esta linguagem está em Desenvolvimento :)')

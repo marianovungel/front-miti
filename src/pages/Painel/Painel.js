@@ -8,6 +8,10 @@ import api from '../../api'
 import { useState } from 'react';
 import Swal from 'sweetalert2';
 import _ from 'underscore'
+import C from '../../components/RatingComp/C';
+import Jv from '../../components/RatingComp/Jv';
+import Py from '../../components/RatingComp/Py';
+import Js from '../../components/RatingComp/Js';
 
 export const options = {
   title: "LINGUAGEM C",
@@ -22,7 +26,7 @@ export const data = [
   ["Mult-Escolha", 4, 12],
   ["Duplo-Input", 3, 4],
   ["Triplo-Input", 2, 7],
-  ["Perguntas", 1, 26],
+  ["Perguntas", 1, 25],
 ];
 export const optionsjv = {
   title: "LINGUAGEM JAVA",
@@ -52,7 +56,7 @@ export const datapy = [
   ["Mult-Escolha", 4, 10],
   ["Duplo-Input", 3, 2],
   ["Triplo-Input", 2, 3],
-  ["Perguntas", 1, 20],
+  ["Perguntas", 1, 21],
 ];
 export const optionsjs = {
   title: "LINGUAGEM JAVASCRIPT",
@@ -67,7 +71,7 @@ export const datajs = [
   ["Mult-Escolha", 4, 11],
   ["Duplo-Input", 3, 3],
   ["Triplo-Input", 2, 3],
-  ["Perguntas", 1, 24],
+  ["Perguntas", 1, 23],
 ];
 
 export default function Painel() {
@@ -78,6 +82,8 @@ export default function Painel() {
   const [Painelcor, setPainelcor] = useState("menuItenLeft colorLeft")
   const [InstruCor, setInstruCor] = useState("menuItenLeft")
   const [CadAdm, setCadAdm] = useState("menuItenLeft")
+  const [RatingAdm, setRatingAdm] = useState("menuItenLeft")
+  const [CadPerguAdmPainel, setCadPerguAdmPainel] = useState("menuItenLeft")
   const [Nome, setNome] = useState("")
   const [Senha, setSenha] = useState("")
   const [question, setQuestion] = useState("")
@@ -279,18 +285,24 @@ export default function Painel() {
     setPainelcor("menuItenLeft")
     setInstruCor("menuItenLeft colorLeft")
     setCadAdm("menuItenLeft")
+    setRatingAdm("menuItenLeft")
+    setCadPerguAdmPainel("menuItenLeft")
   }
   const setShowPainel = ()=>{
     setShow("grafico")
     setPainelcor("menuItenLeft colorLeft")
     setInstruCor("menuItenLeft")
     setCadAdm("menuItenLeft")
+    setRatingAdm("menuItenLeft")
+    setCadPerguAdmPainel("menuItenLeft")
   }
   const setShowCadAdm = ()=>{
     setShow("cadAdm")
     setPainelcor("menuItenLeft")
     setCadAdm("menuItenLeft colorLeft")
     setInstruCor("menuItenLeft")
+    setRatingAdm("menuItenLeft")
+    setCadPerguAdmPainel("menuItenLeft")
   }
 
   const submitAdm = async (e)=>{
@@ -333,17 +345,33 @@ export default function Painel() {
         inputValidator: (value) => {
           return new Promise((resolve) => {
             if (value === 'C') {
-                navigate("/rating-c")
-                window.location.replace("/rating-c")
+                setShow("CR")
+                setRatingAdm("menuItenLeft colorLeft")
+                setPainelcor("menuItenLeft")
+                setInstruCor("menuItenLeft")
+                setCadAdm("menuItenLeft")
+                setCadPerguAdmPainel("menuItenLeft")
             } else if(value === 'Java'){
-                navigate("/rating-jv")
-                window.location.replace("/rating-jv")
+                setRatingAdm("menuItenLeft colorLeft")
+                setShow("JvR")
+                setPainelcor("menuItenLeft")
+                setInstruCor("menuItenLeft")
+                setCadAdm("menuItenLeft")
+                setCadPerguAdmPainel("menuItenLeft")
             }else if(value === 'Python'){
-              navigate("/rating-py")
-              window.location.replace("/rating-py")
+                setRatingAdm("menuItenLeft colorLeft")
+                setShow("PyR")
+                setPainelcor("menuItenLeft")
+                setInstruCor("menuItenLeft")
+                setCadAdm("menuItenLeft")
+                setCadPerguAdmPainel("menuItenLeft")
             }else if(value === 'JavaScript'){
-              navigate("/rating-js")
-              window.location.replace("/rating-js")
+                setRatingAdm("menuItenLeft colorLeft")
+                setShow("JsR")
+                setPainelcor("menuItenLeft")
+                setInstruCor("menuItenLeft")
+                setCadAdm("menuItenLeft")
+                setCadPerguAdmPainel("menuItenLeft")
             }else {
               resolve('O jogo para esta linguagem está em Desenvolvimento :)')
             }
@@ -373,13 +401,33 @@ export default function Painel() {
         inputValidator: (value) => {
           return new Promise((resolve) => {
             if (value === 'C') {
+                setCadPerguAdmPainel("menuItenLeft colorLeft")
                 setShow("C")
+                setRatingAdm("menuItenLeft")
+                setPainelcor("menuItenLeft")
+                setInstruCor("menuItenLeft")
+                setCadAdm("menuItenLeft")
             } else if(value === 'Java'){
-              setShow("Java")
+                setCadPerguAdmPainel("menuItenLeft colorLeft")
+                setShow("Java")
+                setRatingAdm("menuItenLeft")
+                setPainelcor("menuItenLeft")
+                setInstruCor("menuItenLeft")
+                setCadAdm("menuItenLeft")
             }else if(value === 'Python'){
-              setShow("Python")
+                setCadPerguAdmPainel("menuItenLeft colorLeft")
+                setShow("Python")
+                setRatingAdm("menuItenLeft")
+                setPainelcor("menuItenLeft")
+                setInstruCor("menuItenLeft")
+                setCadAdm("menuItenLeft")
             }else if(value === 'JavaScript'){
-              setShow("JavaScript")
+                setCadPerguAdmPainel("menuItenLeft colorLeft")
+                setShow("JavaScript")
+                setRatingAdm("menuItenLeft")
+                setPainelcor("menuItenLeft")
+                setInstruCor("menuItenLeft")
+                setCadAdm("menuItenLeft")
             }else {
               resolve('O jogo para esta linguagem está em Desenvolvimento :)')
             }
@@ -405,21 +453,21 @@ export default function Painel() {
             <i className="fa-solid fa-chart-line marginIconManuLeft"></i>
             <h3 className='marginIconManuLeft'>Painel</h3>
           </div>
-          <div onClick={cadastrarQ} className='menuItenLeft'>
+          <div onClick={cadastrarQ} className={CadPerguAdmPainel}>
             <i className="fa-solid fa-pen-to-square marginIconManuLeft"></i>
             <h3 className='marginIconManuLeft'>Cadastrar Pergunta</h3>
           </div>
-          <div className={CadAdm}>
+          <div className={CadAdm} onClick={setShowCadAdm}>
             <i className="fa-solid fa-user-plus marginIconManuLeft"></i>
-            <h3 className='marginIconManuLeft' onClick={setShowCadAdm}>Cadastrar Administrador</h3>
+            <h3 className='marginIconManuLeft' >Cadastrar Administrador</h3>
           </div>
-          <div className='menuItenLeft'>
+          <div className={RatingAdm} onClick={Ratings}>
             <i className="fa-solid fa-ranking-star marginIconManuLeft"></i>
-            <h3 className='marginIconManuLeft' onClick={Ratings}>Ranking</h3>
+            <h3 className='marginIconManuLeft' >Ranking</h3>
           </div>
-          <div className={InstruCor}>
+          <div className={InstruCor} onClick={setShowInstrucoes}>
             <i className="fa-solid fa-chalkboard-user marginIconManuLeft"></i>
-            <h3 className='marginIconManuLeft' onClick={setShowInstrucoes}>Instruções</h3>
+            <h3 className='marginIconManuLeft' >Instruções</h3>
           </div>
           <Link to='/home' className='menuItenLeft'>
             <i className="fa-solid fa-house marginIconManuLeft"></i>
@@ -615,6 +663,26 @@ export default function Painel() {
             </form>
           </div>
         </div>
+        )}
+        { show === "CR" && (
+          <div className='cRankingNEw'>
+            <C />
+          </div>
+        )}
+        { show === "JvR" && (
+          <div className='cRankingNEw'>
+            <Jv />
+          </div>
+        )}
+        { show === "PyR" && (
+          <div className='cRankingNEw'>
+            <Py />
+          </div>
+        )}
+        { show === "JsR" && (
+          <div className='cRankingNEw'>
+            <Js />
+          </div>
         )}
       </div>
     </div>

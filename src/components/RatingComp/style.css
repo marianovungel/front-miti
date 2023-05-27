@@ -1,19 +1,26 @@
 .contentCcomp{
     width: 100%;
+    min-height: 400px;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+
 }
 .table{
     width: 80%;
-    height: 700px;
+    border-radius: 20px;
+    min-height: 400px;
+    height: 570px;
     background-color: #ddd;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     overflow-y: scroll;
+    position: relative;
+
 }
 .headerTable, .bodyTable{
     width: 100%;
