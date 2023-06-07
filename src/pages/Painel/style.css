@@ -157,17 +157,21 @@
     padding: 10px;
     border-radius: 20px;
 }
-
 .instrucoes{
-    width: 80%;
-    padding: 40px;
+    width: 90%;
+    padding: 10px 15px 5px 15px;
     border: 1.5px solid #ddd;
     box-shadow: 1px 1px 2px 1px #ddd;
     border-radius: 20px;
-    margin-top: 30px;
+    margin-top: 20px;
+}
+.header6{
+    text-align: left;
+    font-size: 1rem;
 }
 .hinstrutions{
     text-align: center;
+    font-size: 1.4rem;
 }
 .pInstrutions{
     width: 100%;

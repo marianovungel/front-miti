@@ -112,7 +112,10 @@ export default function Home() {
                 <Link to="/home" className="jogar">Home</Link>
                 <li to="/jogar" className="jogar" onClick={jogo}>Jogar</li>
                 <li className="jogar" onClick={Ratings}>Ranking</li>
+                <Link to="/instrucoes" className="jogar">
+
                 <li className="jogar">Instruções</li>
+                </Link>
                 {adm && (<Link to='/painel' className="jogar">Painel</Link>)}
                 <li className="jogar" onClick={Logout}>Logout</li>
             </div>

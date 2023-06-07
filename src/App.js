@@ -14,6 +14,7 @@ import Ratingjv from './pages/Rating/Ratingjv';
 import Ratingpy from './pages/Rating/Ratingpy';
 import Ratingjs from './pages/Rating/Ratingjs';
 import Painel from './pages/Painel/Painel';
+import Instrucoes from './pages/Instrucoes/Instrucoes';
 
 
 
@@ -37,6 +38,7 @@ function App() {
             <Route path="/rating-py" element={user ? <Ratingpy />: <Login />} exact />
             <Route path="/rating-js" element={user ? <Ratingjs />: <Login />} exact />
             <Route path="/painel" element={user ? <Painel />: <Home />} exact />
+            <Route path="/instrucoes" element={user ? <Instrucoes />: <Login />} exact />
           </Routes>
         </Router>
     </div>

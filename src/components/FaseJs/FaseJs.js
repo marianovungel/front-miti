@@ -45,7 +45,7 @@ export default function FaseJs() {
             <img src="./js1.png" alt={img} className="contImg" />
             <div className="buttonNext">
                 <div className="btn">
-                    <button className="next" onClick={goPergunta}>Next</button>
+                    <button className="next" onClick={goPergunta}>Próxima Pergunta</button>
                 </div>
             </div>
             </>

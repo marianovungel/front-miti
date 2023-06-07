@@ -504,26 +504,68 @@ export default function Painel() {
             </div>
         </div>
         {show === "instrucoes" && (<div className='instrucoes'>
-          <h1 className='hinstrutions'>Instruções</h1>
+          <h1 className='hinstrutions'>Instruções do Jogo:</h1>
           <p className='pInstrutions'>
-          A criação de um jogo para o ensino da programação pode
-           ser uma ótima iniciativa, pois torna o aprendizado mais
-          divertido e interativo. É uma forma de engajar os estudantes e 
-          tornar o processo de aprendizagem mais efetivo e eficiente. 
-          Além disso, jogos educativos são uma tendência atual na educação,
-          especialmente quando se trata de ensinar habilidades técnicas.
-          Aprender a programar também pode ajudar a desenvolver habilidades
-           de resolução de problemas, raciocínio lógico e pensamento cítrico, 
-          que são importantes em diversas áreas de atuação.
-          A criação de um jogo para o ensino da programação
-          pode ser uma ótima iniciativa, pois torna o aprendizado 
-          mais divertido e interativo. É uma forma de engajar os estudantes
-          e tornar o processo de aprendizagem mais efetivo e eficiente.
-          Além disso, jogos educativos são uma tendência atual na educação,
-          especialmente quando se trata de ensinar habilidades técnicas.
-          Aprender a programar também pode ajudar a desenvolver habilidades de
-           resolução de problemas, raciocínio lógico e pensamento cítrico, 
-           que são importantes em diversas áreas de atuação.
+          
+
+Bem-vindo ao jogo de ensino da programação! Aqui estão as instruções para aproveitar ao máximo a experiência de aprendizado:
+
+<h6 className='header6'>1. Escolha a Linguagem:</h6>
+    <p className='paragraf6'>
+    - No início do jogo, você terá a opção de escolher uma das quatro linguagens de programação disponíveis: C, Java, Python ou JavaScript.
+    </p>
+    <p className='paragraf6'>
+   - Selecione a linguagem com a qual deseja praticar e aprender.
+    </p>
+   <h6 className='header6'>2. Capítulo e Material:</h6>
+   <p className='paragraf6'>
+   - Após escolher a linguagem, você será apresentado a um capítulo específico relacionado a essa linguagem.
+   </p>
+   <p className='paragraf6'>
+   - Leia atentamente o material fornecido no capítulo, que será apresentado de forma ilustrada e explicativa.
+   </p>
+   <h6 className='header6'>3. Perguntas de Escolha Múltipla:</h6>
+   <p className='paragraf6'>
+   - Após a leitura do capítulo, serão exibidas perguntas de escolha múltipla relacionadas ao conteúdo abordado.
+   </p>
+   <p className='paragraf6'>
+   - Leia cuidadosamente as opções de resposta e selecione a opção correta.
+   </p>
+   <p className='paragraf6'>
+   - Se você responder corretamente, avançará para a próxima pergunta. Caso contrário, receberá um feedback com um botão vermelho indicando a resposta incorreta.
+   </p>
+   <h6 className='header6'>4. Perguntas com Input:</h6>
+   <p className='paragraf6'>
+   - Após as perguntas de escolha múltipla, você será desafiado com perguntas que exigem a aplicação prática do conhecimento adquirido.
+   </p>
+   <p className='paragraf6'>
+   - Aqui, você terá a oportunidade de colocar em prática seus conhecimentos de programação digitando o código apropriado.
+   </p>
+   <p className='paragraf6'>
+   - Responda com cuidado, aplicando os conceitos aprendidos no capítulo correspondente.
+   </p>
+   <h6 className='header6'>5. Feedback de Respostas:</h6>
+   <p className='paragraf6'>
+   - Ao responder cada pergunta, você receberá um feedback imediato.
+   </p>
+   <p className='paragraf6'>
+   - Se sua resposta estiver correta, você receberá um feedback com um botão verde indicando a resposta correta.
+   </p>
+   <p className='paragraf6'>
+   - Se você errar, receberá um feedback com um botão vermelho e sua pontuação final será decrementada.
+   </p>
+   <h6 className='header6'>6. Pontuação Final e Jogar Novamente:</h6>
+   <p className='paragraf6'>
+   - Após completar todas as perguntas do capítulo, você verá sua pontuação final para essa linguagem.
+   </p>
+   <p className='paragraf6'>
+   - A pontuação final refletirá sua precisão e desempenho ao responder às perguntas.
+   </p>
+   <p className='paragraf6'>
+   - Você terá a opção de jogar novamente para aprimorar seus conhecimentos e melhorar sua pontuação.
+   </p>
+Aproveite o jogo de ensino da programação para aprender e praticar os conceitos fundamentais de cada linguagem de programação.
+ Continue progredindo através dos capítulos e desafios para aprimorar suas habilidades. Boa sorte e divirta-se enquanto aprende!
           </p>
         </div>
         )}

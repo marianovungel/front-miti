@@ -250,7 +250,7 @@ export default function JogoEscolhapy({
             {question?.tipo === "input" &&(
                 <div className="respostaEscolha">
                     <input type="text" onChange={(e)=>setvVlorinp(e.target.value)} className="inpTextEscolha" />
-                    <button className={selectedAnswer ? className : "Proximo"} onClick={()=>handleClickInput(valorinp)}>Next</button>
+                    <button className={selectedAnswer ? className : "Proximo"} onClick={()=>handleClickInput(valorinp)}>Próxima Pergunta</button>
                 </div>
             )}
             {question?.tipo === "img" &&(
@@ -258,7 +258,7 @@ export default function JogoEscolhapy({
                     <img src={question.url} alt="" className="contImg" />
                     <div className="buttonNext">
                         <div className="btn">
-                            <button className="next" onClick={goPergunta}>Next</button>
+                            <button className="next" onClick={goPergunta}>Próxima Pergunta</button>
                         </div>
                     </div>
                 </>
@@ -266,11 +266,11 @@ export default function JogoEscolhapy({
             {question?.tipo === "operador" &&(
                 <div className="respostaEscolha organizar">
                     <div className="inputContext">
-                        <input type='number' placeholder='Nímero' onChange={(e)=>setNumeroOne(e.target.value)} className='inputNumber' required />
+                        <input type='number' placeholder='Número' onChange={(e)=>setNumeroOne(e.target.value)} className='inputNumber' required />
                         <div className='inputNumber newdiv'><span className='spanDivOp'>{question?.resposta[0].op}</span></div>
-                        <input type='number' placeholder='Nímero' onChange={(e)=>setNumerotow(e.target.value)} className='inputNumber' required />
+                        <input type='number' placeholder='Número' onChange={(e)=>setNumerotow(e.target.value)} className='inputNumber' required />
                     </div>
-                    <button className={selectedAnswer ? className : "Proximo"} onClick={()=>handleClickOp({ative: true})}>Next</button>
+                    <button className={selectedAnswer ? className : "Proximo"} onClick={()=>handleClickOp({ative: true})}>Próxima Pergunta</button>
                 </div>
             )}
             {question?.tipo === "if" &&(
@@ -289,7 +289,7 @@ export default function JogoEscolhapy({
                             <div className="listif"><p>{question?.resposta[0].p3}</p></div>
                         </div>
                     </div>
-                    <button className={selectedAnswer ? className : "Proximo"} onClick={()=>handleClickif({ative: true})}>Next</button>
+                    <button className={selectedAnswer ? className : "Proximo"} onClick={()=>handleClickif({ative: true})}>Próxima Pergunta</button>
                 </div>
             )}
             {question?.tipo === "ifelse" &&(
@@ -314,7 +314,7 @@ export default function JogoEscolhapy({
 
                         </div>
                     </div>
-                    <button className={selectedAnswer ? className : "Proximo"} onClick={()=>handleClickifelse({ative: true})}>Next</button>
+                    <button className={selectedAnswer ? className : "Proximo"} onClick={()=>handleClickifelse({ative: true})}>Próxima Pergunta</button>
                 </div>
             )}
         </div>

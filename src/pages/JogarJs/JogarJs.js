@@ -99,7 +99,10 @@ export default function JogarJs() {
                 <Link to="/home" className="jogar">Home</Link>
                 <li to="/jogar" className="jogar" onClick={jogo}>Jogar</li>
                 <li className="jogar" onClick={Ratings}>Ranking</li>
+                <Link to="/instrucoes" className="jogar">
+
                 <li className="jogar">Instruções</li>
+                </Link>
             </div>
         </div>
         <div className="sectionJogoEndLogo">
